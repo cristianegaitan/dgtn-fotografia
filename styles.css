@@ -592,3 +592,8 @@ img.about-visual {
         transform: translateY(-7px) rotate(-45deg);
     }
 }
+
+.portfolio-image:focus-visible {
+    outline: 3px solid #d4a85a;
+    outline-offset: 4px;
+}

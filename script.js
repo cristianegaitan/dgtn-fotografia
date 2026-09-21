@@ -16,8 +16,22 @@ function openLightbox(image) {
 }
 
 portfolioImages.forEach((image) => {
+    const card = image.closest(".portfolio-card");
+    const title = card.querySelector("h3").textContent;
+
+    image.setAttribute("tabindex", "0");
+    image.setAttribute("role", "button");
+    image.setAttribute("aria-label", `Ampliar imagen: ${title}`);
+
     image.addEventListener("click", () => {
         openLightbox(image);
+    });
+
+    image.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openLightbox(image);
+        }
     });
 });
 
