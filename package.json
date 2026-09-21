@@ -1,0 +1,24 @@
+{
+  "name": "dgtn-fotografia",
+  "version": "1.0.0",
+  "description": "Sitio web profesional de Damián Gaitán, fotógrafo y filmmaker en Córdoba y Río Cuarto, Argentina.",
+  "main": "script.js",
+  "scripts": {
+    "optimizar": "node optimizar-imagenes.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristianegaitan/dgtn-fotografia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cristianegaitan/dgtn-fotografia/issues"
+  },
+  "homepage": "https://github.com/cristianegaitan/dgtn-fotografia#readme",
+  "dependencies": {
+    "sharp": "^0.35.4"
+  }
+}

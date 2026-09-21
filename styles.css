@@ -430,3 +430,13 @@ section[id] {
         width: 100%;
     }
 }
+
+img.portfolio-image {
+    width: 100%;
+    object-fit: cover;
+}
+
+img.about-visual {
+    width: 100%;
+    object-fit: cover;
+}
