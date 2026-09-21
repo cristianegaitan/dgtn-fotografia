@@ -30,3 +30,43 @@ lightbox.addEventListener("click", (event) => {
         lightbox.close();
     }
 });
+
+// Menú para celulares
+const navToggle = document.querySelector(".nav-toggle");
+const navList = document.querySelector(".nav-list");
+const navLinks = document.querySelectorAll(".nav-list a");
+
+function closeMenu() {
+    navList.classList.remove("is-open");
+    navToggle.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Abrir menú");
+}
+
+navToggle.addEventListener("click", () => {
+    const isOpen = navList.classList.toggle("is-open");
+
+    navToggle.classList.toggle("is-open", isOpen);
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+    navToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Cerrar menú" : "Abrir menú"
+    );
+});
+
+navLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && navList.classList.contains("is-open")) {
+        closeMenu();
+        navToggle.focus();
+    }
+});
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 800) {
+        closeMenu();
+    }
+});
